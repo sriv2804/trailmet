@@ -1,9 +1,11 @@
+import os
 import numpy as np
 
 class SyntheticDataset:
     
-    def __init__(self, root):
+    def __init__(self, root, base_dataset, self.n_samples):
         self.root_path = root
+        self.base_data_path = base_dataset
     
     def generate_dataset():
         
@@ -20,3 +22,10 @@ class SyntheticDataset:
         else:
             print('Data exists at ', self.root_path)
             return
+        
+    def get_base_dataset(self):
+        
+        # check if base dataset exists, else download it
+        if not os.listdir(self.base_data_path):
+            
+        
