@@ -3,11 +3,15 @@ import numpy as np
 
 class SyntheticDataset:
     
-    def __init__(self, root, base_dataset, self.n_samples):
+    def __init__(self, root, base_data_path, base_data, self.n_samples):
         self.root_path = root
-        self.base_data_path = base_dataset
+        self.base_data_path = base_data_path
+        self.base_data = base_data
+        self.base_url = base_url
+        self.download_base_flag = False
+        self.generate_hard_flag = 
     
-    def generate_dataset():
+    def generate_dataset(self, ):
         
         pass
     
@@ -27,5 +31,12 @@ class SyntheticDataset:
         
         # check if base dataset exists, else download it
         if not os.listdir(self.base_data_path):
+            print('Base dataset does not exist at specified path, downloading now...')
+            self.download_base_flag = True
+        
+        if self.download_base_flag:
+            
+            if self.
+            
             
         
