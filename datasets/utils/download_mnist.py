@@ -59,7 +59,7 @@ def unzip(zipped_path, quiet):
                 print('Unzipped {} ...'.format(zipped_path))
 
 
-def main():
+def get():
     parser = argparse.ArgumentParser(
         description='Download the MNIST dataset from the internet')
     parser.add_argument(
@@ -82,7 +82,3 @@ def main():
             unzip(path, options.quiet)
     except KeyboardInterrupt:
         print('Interrupted')
-
-
-if __name__ == '__main__':
-    main()
