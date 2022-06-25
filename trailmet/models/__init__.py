@@ -17,7 +17,7 @@ class ModelsFactory(object):
         if 'resnet' in name:
             assert 'insize' in kwargs, "should provide input size"
             insize = kwargs['insize']
-            model = get_resnet_model(name, num_classes, insize, pretrained = pretrained, **kwargs)
+            model = get_resnet_model(name, num_classes, insize, pretrained = pretrained)
         else:
             raise Exception("unknown model {}".format(kwargs['name']))
         return model

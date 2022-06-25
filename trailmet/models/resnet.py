@@ -240,7 +240,7 @@ def make_resnet152(num_classes, insize):
     model = ResNet(Bottleneck, [3, 8, 36, 3], num_classes=num_classes, insize=insize)
     return model
 
-def get_resnet_model(model, num_classes, insize, pretrained, **kwargs):
+def get_resnet_model(model, num_classes, insize, pretrained):
     """Returns the requested model, ready for training/pruning with the specified method.
     :param model: str, either wrn or r50
     :param num_classes: int, num classes in the dataset
@@ -275,7 +275,7 @@ def get_resnet_model(model, num_classes, insize, pretrained, **kwargs):
         net = make_resnet152(num_classes, insize)
         pretrained_weights = "https://download.pytorch.org/models/resnet152-f82ba261.pth"
     if pretrained:
-        if pretrained_weights!=None:
+        if pretrained_weights != None:
             weights = load_state_dict_from_url(pretrained_weights, progress=True)
             net.load_state_dict(weights, strict = False)
         else:
